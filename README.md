@@ -21,9 +21,8 @@ $ rm sonar-scanner-cli-3.3.0.1492-macosx.zip
 ## edit sonar-scanner.properties
 
 ## install plugin list
-* Japanese Pack
+* Japanese Pack  
 日本語翻訳用のプラグイン。英語が難しい方はどうぞ。
-* 
 
 ## edit sonar-project.properties
 ```
