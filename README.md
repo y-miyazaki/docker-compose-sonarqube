@@ -54,7 +54,8 @@ $ make upload-aws
 ```
 
 ## docker push image to GCP Container Registry
-vscode-remote-docker-gcp用に作成しています。ない場合は、以下の内容が必要になります。
+vscode-remote-development-gcp用に作成しています。ない場合は、以下の内容が必要になります。  
+https://github.com/y-miyazaki/vscode-remote-development-gcp
 
 - install Cloud SDK  
 https://cloud.google.com/sdk/downloads?hl=JA
