@@ -6,7 +6,7 @@
 docker-compose up -d
 ```
 
-## install sonar scanner for mac
+## Install sonar scanner for mac
 ソースコードの解析を行うツール
 以下のページにあるURLから対応するOSのものを落としましょう。
 https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
@@ -18,13 +18,13 @@ $ mv sonar-scanner-3.3.0.1492-macosx /etc/sonar-scanner
 $ rm sonar-scanner-cli-3.3.0.1492-macosx.zip
 ```
 
-## edit sonar-scanner.properties
+## Edit sonar-scanner.properties
 
-## install plugin list
+## Install plugin list
 * Japanese Pack  
 日本語翻訳用のプラグイン。英語が難しい方はどうぞ。
 
-## edit sonar-project.properties
+## Edit sonar-project.properties
 ```
 sonar.projectKey=lambda_sample
 sonar.projectName=lambda_sample
@@ -37,13 +37,33 @@ sonar.test.inclusions=**/*_test.go
 sonar.test.exclusions=**/vendor/**
 ```
 
-## run sonar-scanner
+## Run sonar-scanner
 ```
 $ /etc/sonar-scanner/bin/sonar-scanner 
 ```
 
-## docker push
+## docker push image to AWS ECS
+vscode-remote-docker-aws用に作成しています。ない場合は、以下の内容が必要になります。
+
+- install aws cli  
+https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-chap-install.html
+- aws configure command
+```bash
+$ make build
+$ make upload-aws
 ```
-$ make build env={environment}
-$ make upload env={environment} profile={aws profile}
+
+## docker push image to GCP Container Registry
+vscode-remote-docker-gcp用に作成しています。ない場合は、以下の内容が必要になります。
+
+- install Cloud SDK  
+https://cloud.google.com/sdk/downloads?hl=JA
+- export PROJECT_ID
+```bash
+$ make build
+$ make upload-gcp
 ```
+
+## Required
+- docker  
+- mac or linux
